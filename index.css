@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root{
+    --main-color : hsl(0, 100%, 74%);
+    --second-color : hsl(154, 59%, 51%);
+    --try-color: hsl(248, 32%, 49%);
+    --try2 : hsl(249, 10%, 26%);
+    --text : hsl(246, 25%, 77%);
+}
+html{
+    font-size: 16px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-image: url(images/bg-intro-desktop.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--main-color);
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    width: calc(1440px - 2 * 100px);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+.container .title h1{
+    font-size: 60px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+.container .title p{
+    line-height: 1.7;
+    width: 600px;
+    font-size: 20px;
+}
+@media (max-width:375px) {
+    .container{
+        width: calc(375px - 2 * 20px);
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        padding-top: 40px;
+        padding-bottom:40px ;
+    } 
+    .container .title{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        
+    }
+    .container .title h1{
+        width: 400px;
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .container .title p{
+        width: 100%;
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    body{
+        background-image: url(images/bg-intro-mobile.png);
+        width: 100%;
+        display: flex;
+        justify-content: unset;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+    }
+}
+.container .sign .try {
+    background-color: var(--try-color);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 7px #00000036;
+    font-weight: 600;
+}
+.container .sign .try span{
+    color: #ddd;
+    font-weight: 300;
+}
+.container .sign form{
+    padding: 40px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 500px;
+    box-shadow: 0 7px #00000036;
+}
+@media (max-width:375px){
+    .container .sign form{
+        padding: 20px;
+        width: 100%;
+    }
+}
+.container .sign form input{
+    padding: 15px;
+    margin-bottom: 30px;
+    border: 2px solid #ddd;
+    border-radius:6px ;
+    position: relative;
+}
+.container .sign form input:focus{
+    border: 2px solid var(--try-color);
+    outline: none;
+}
+.container .sign form input::placeholder{
+    font-size: 16px;
+}
+.container .sign form input[type = "submit"]{
+    all: unset;
+    background-color: var(--second-color);
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+.container .sign form input[type = "submit"]:hover{
+    background-color: hsl(154, 69%, 68%);
+}
+.container .sign p:not(.error){
+    color : #ddd;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 600;
+}
+.sign .error{
+    color: var(--main-color);
+    text-align: right;
+    font-size: 14px;
+    position: relative;
+    top: -22px;
+    display: none;
+}
+.email-error::placeholder {
+    color: var(--main-color)
+ }
+.container .sign p span{
+    color: var(--main-color);
+}
+.correct{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.338);
+    z-index: 2;
+    display: none;
+}
+.correct div{
+    background-color: white;
+    padding: 80px;
+    color: black;
+    text-align: center;
+    border-radius: 10px;
+    color: var(--second-color);
+}
+.correct div img{
+    width: 50px;
+}
+
+@media (max-width:375px) {
+    .correct{
+        padding: 0 20px;
+    }
+    .correct div{
+        padding: 40px;
+    }
+}
